@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-""" Module documentation """
+""" doc doc doc """
+BaseCaching = __import__("base_caching").BaseCaching
 
-from base_caching import BaseCaching
+
 class BasicCache(BaseCaching):
-    """ BasicCache class that inherits from BaseCaching """
+    """doc doc doc"""
+
     def put(self, key, item):
-        """ func documenation """
-        if key is not None and item is not None:
+        """doc doc doc"""
+        if key and item:
             self.cache_data[key] = item
+
     def get(self, key):
-        """ Get an item by key """
-        if key is None:
-            return None
-        return self.cache_data.get(key, None)
+        """doc doc doc"""
+        return self.cache_data.get(key)
