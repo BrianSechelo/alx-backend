@@ -2,6 +2,7 @@
 """ doc doc doc """
 BaseCaching = __import__("base_caching").BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """doc doc doc"""
 
@@ -11,11 +12,12 @@ class FIFOCache(BaseCaching):
 
     def put(self, key, item):
         """doc doc doc"""
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            removed = next(iter(self.cache_data))
-            self.cache_data.pop(removed)
-            print("DISCARD: {}".format(removed))
-        self.cache_data[key] = item
+        if key and item:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                removed = next(iter(self.cache_data))
+                self.cache_data.pop(removed)
+                print("DISCARD: {}".format(removed))
+            self.cache_data[key] = item
 
     def get(self, key):
         """doc doc doc"""
